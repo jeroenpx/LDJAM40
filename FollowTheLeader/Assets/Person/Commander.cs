@@ -5,13 +5,22 @@ using UnityEngine;
 public class Commander : MonoBehaviour {
 
     //VARIABLES
+	private PersonController myController;
+	private ScoreManager scoreManager;
 
     
     //METHODS
 
+	private void Awake() {
+		myController = GetComponent<PersonController> ();
+		scoreManager = GameObject.FindObjectOfType<ScoreManager> ();
+	}
+
     private void Update()
     {
         Inputs();
+
+		scoreManager.UpdateScore(myController.GetFollowerGroupCount ());
     }
 
     private void Inputs()
