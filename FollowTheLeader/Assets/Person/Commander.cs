@@ -21,5 +21,9 @@ public class Commander : MonoBehaviour {
          Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
          gameObject.SendMessage("Move", direction);
         } 
+
+        if(Input.GetButtonDown("Jump")) gameObject.SendMessage("Jump");
     }
+    
+
 }
