@@ -11,8 +11,8 @@ public class SquareBehaviour : MonoBehaviour {
     public event CommanderEnteredHandler CommanderEnteredEvent;
 
 	// Use this for initialization
-	void Start () {
-        this.nr = serial++;
+	void Awake () {
+        this.nr = ++serial;
 	}
 	
 	// Update is called once per frame
