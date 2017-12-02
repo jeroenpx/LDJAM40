@@ -25,8 +25,6 @@ public class PersonController : MonoBehaviour {
 	private Vector3 childDelta;
 	private bool jumping;
 
-	public float t;
-
 	void Awake() {
 		rigidBody = GetComponent<Rigidbody2D> ();
 		child = transform.Find ("Graphics");
@@ -66,7 +64,7 @@ public class PersonController : MonoBehaviour {
 			}
 			if (jumping) {
 				// we are in the air!
-				t = (Time.time-jumpStartTime)/inairtime;
+				float t = (Time.time-jumpStartTime)/inairtime;
 				float tsquared = t*t;
 				child.localPosition = childDelta + new Vector3(0f, -4*jumpheight*tsquared+4*jumpheight*t);
 			}
