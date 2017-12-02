@@ -16,6 +16,8 @@ public class PersonController : MonoBehaviour {
 
     [SerializeField] private Animator _anim;
 
+    [SerializeField] private int _playerNumber;
+
     // What to do next frame?
     private Vector2 moveDir;
 	private bool jump;
@@ -33,13 +35,20 @@ public class PersonController : MonoBehaviour {
 		childDelta = child.localPosition;
 	}
 
+
+    public int PlayerNumber
+    {
+        get { return _playerNumber; }
+        set { _playerNumber = value; }
+    }
+
 	/**
 	 * MESSAGE: Move in a certain direction
 	 */
 	public void Move(Vector2 dir) {
 		moveDir = dir;
-	    if (Input.GetAxis("Horizontal") > 0) child.localScale = new Vector3(-1,1,1);
-        if(Input.GetAxis("Horizontal") < 0) child.localScale = new Vector3(1, 1, 1);
+	    if (Input.GetAxis("Horizontal_p"+PlayerNumber) > 0) child.localScale = new Vector3(-1,1,1);
+        if(Input.GetAxis("Horizontal_p"+PlayerNumber) < 0) child.localScale = new Vector3(1, 1, 1);
         _anim.SetFloat("Speed", 1);
     }
 
