@@ -17,6 +17,10 @@ public class SquareBehaviour : MonoBehaviour {
 
     public void LinkToPrevious(SquareBehaviour prev)
     {
+        // we need to match our entrance with the previous exit:
+        Vector3 move = prev.exit.position - this.entrance.position;
 
+        //now move the whole square
+        this.transform.position += move;
     }
 }

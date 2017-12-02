@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: c9fbc6c796fb80d469750118f140a882
+timeCreated: 1512221273
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: barbarian_0
+    21300002: barbarian_1
+    21300004: barbarian_2
+    21300006: barbarian_3
+    21300008: barbarian_4
+    21300010: barbarian_5
+    21300012: barbarian_6
+    21300014: barbarian_7
+    21300016: barbarian_8
+    21300018: barbarian_9
+    21300020: barbarian_10
+    21300022: barbarian_11
+    21300024: barbarian_12
+    21300026: barbarian_13
+    21300028: barbarian_14
+    21300030: barbarian_15
+    21300032: barbarian_16
+    21300034: barbarian_17
+    21300036: barbarian_18
+    21300038: barbarian_19
+    21300040: barbarian_20
+    21300042: barbarian_21
+    21300044: barbarian_22
+    21300046: barbarian_23
+    21300048: barbarian_24
+    21300050: barbarian_25
+    21300052: barbarian_26
+    21300054: barbarian_27
+    21300056: barbarian_28
+    21300058: barbarian_29
+    21300060: barbarian_30
+    21300062: barbarian_31
+    21300064: barbarian_32
+    21300066: barbarian_33
+    21300068: barbarian_34
+    21300070: barbarian_35
+    21300072: barbarian_36
+    21300074: barbarian_37
+    21300076: barbarian_38
+    21300078: barbarian_39
+    21300080: barbarian_40
+    21300082: barbarian_41
+    21300084: barbarian_42
+    21300086: barbarian_43
+    21300088: barbarian_44
+    21300090: barbarian_45
+    21300092: barbarian_46
+    21300094: barbarian_47
+    21300096: barbarian_48
+    21300098: barbarian_49
+    21300100: barbarian_50
+    21300102: barbarian_51
+    21300104: barbarian_52
+    21300106: barbarian_53
+    21300108: barbarian_54
+    21300110: barbarian_55
+    21300112: barbarian_56
+    21300114: barbarian_57
+    21300116: barbarian_58
+    21300118: barbarian_59
+    21300120: barbarian_60
+    21300122: barbarian_61
+    21300124: barbarian_62
+    21300126: barbarian_63
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 30
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: barbarian_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: barbarian_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: barbarian_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
