@@ -133,7 +133,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1268955909605072}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1f470ef0c7d94564088e3983f33932a0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -179,15 +179,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69eded0a6ef0f6a4082f6f5c3f9db8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followRadius: 2
+  followRadius: 1.6
   findOthers:
     serializedVersion: 2
     m_Bits: 768
   findCommander:
     serializedVersion: 2
     m_Bits: 256
-  updateProbablyTimesPerSecond: 2
-  maxlength: 10
+  updateProbablyTimesPerSecond: 14
+  updateJumpTimesPerSecond: 50
+  maxlength: 60
+  keepDistance: 0
+  keepDistanceCommander: 1.4
   myLengthFromCommander: 100
 --- !u!114 &114289832706668900
 MonoBehaviour:
@@ -200,10 +203,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c93e4ff82a34a4c8b5a81c806bb8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
   inairtime: 1
   jumpheight: 1
+  instantJumpSpeedPercent: 0.5
   _anim: {fileID: 95678460787073852}
+  runningAvgSpeed: {x: 0, y: 0, z: 0}
+  areFollowingMe: []
 --- !u!212 &212408321017765368
 SpriteRenderer:
   m_ObjectHideFlags: 1
