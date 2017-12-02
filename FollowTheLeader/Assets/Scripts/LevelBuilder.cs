@@ -21,7 +21,7 @@ public class LevelBuilder : MonoBehaviour {
 
     private void Update()
     {
-        while (connectSquare.getSerialNr() < (highestNr + margin))
+        while (connectSquare.getSerialNr() > (highestNr + SquaresAhead))
         {
             connectSquare = GenerateSquare();
         }
