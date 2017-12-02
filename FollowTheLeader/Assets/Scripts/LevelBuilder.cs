@@ -11,6 +11,11 @@ public class LevelBuilder : MonoBehaviour {
 
     private int highestNr = 0;
 
+    private void Awake()
+    {
+        connectSquare.CommanderEnteredEvent += CommanderEnteredEvent;
+    }
+
     private void Start()
     {
         levels = new Queue<SquareBehaviour>();
@@ -21,9 +26,10 @@ public class LevelBuilder : MonoBehaviour {
 
     private void Update()
     {
-        while (connectSquare.getSerialNr() > (highestNr + SquaresAhead))
+        while (connectSquare.getSerialNr() < (highestNr + SquaresAhead))
         {
             connectSquare = GenerateSquare();
+            levels.Enqueue(connectSquare);
         }
 
         while (levels.Count > SquaresTotal)
