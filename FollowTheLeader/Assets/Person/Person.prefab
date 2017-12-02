@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212512486712606976}
   - component: {fileID: 95678460787073852}
   m_Layer: 0
-  m_Name: barbarian_0
+  m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1268955909605072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.2317224, y: 0.07743114, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4761908678480962}
@@ -140,6 +140,7 @@ MonoBehaviour:
   speed: 1
   inairtime: 1
   jumpheight: 1
+  _anim: {fileID: 95678460787073852}
   t: 0
 --- !u!114 &114611085377024796
 MonoBehaviour:
@@ -152,7 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c819f938299d9c347be3680bb7207b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _anim: {fileID: 95678460787073852}
 --- !u!212 &212512486712606976
 SpriteRenderer:
   m_ObjectHideFlags: 1
