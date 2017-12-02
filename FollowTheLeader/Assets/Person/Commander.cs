@@ -7,9 +7,15 @@ public class Commander : MonoBehaviour {
     //VARIABLES
 	private PersonController myController;
 	private ScoreManager scoreManager;
-
+    private int _playerNumber;
     
     //METHODS
+
+    public int PlayerNumber
+    {
+        get { return _playerNumber; }
+        set { _playerNumber = value; }
+    }
 
 	private void Awake() {
 		myController = GetComponent<PersonController> ();
@@ -26,16 +32,16 @@ public class Commander : MonoBehaviour {
     private void Inputs()
     {
 
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        if (Input.GetAxis("Horizontal_p"+ PlayerNumber) != 0 || Input.GetAxis("Vertical_p" + PlayerNumber) != 0)
         {
-         Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+         Vector2 direction = new Vector2(Input.GetAxis("Horizontal_p"+PlayerNumber), Input.GetAxis("Vertical_p" + PlayerNumber));
 			if (direction.magnitude > 1f) {
 				direction.Normalize();
 			}
          gameObject.SendMessage("Move", direction);    
         } 
 
-        if(Input.GetButtonDown("Jump")) gameObject.SendMessage("Jump");
+        if(Input.GetButtonDown("Jump_p"+PlayerNumber)) gameObject.SendMessage("Jump");
 
         //if(Input.GetButtonDown("Attack")) gameObject.SendMessage("Attack");
     }
