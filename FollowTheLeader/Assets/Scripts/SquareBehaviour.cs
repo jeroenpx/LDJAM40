@@ -7,7 +7,7 @@ public class SquareBehaviour : MonoBehaviour {
     private int nr;
     private static int serial = 0;
 
-    public delegate void CommanderEnteredHandler(Commander c);
+    public delegate void CommanderEnteredHandler(SquareBehaviour s, Commander c);
     public event CommanderEnteredHandler CommanderEnteredEvent;
 
 	// Use this for initialization
@@ -33,8 +33,23 @@ public class SquareBehaviour : MonoBehaviour {
     //to be called by level builder when the hero has advanced far enough. Will trigger destruction animation
     public void Dissolve()
     {
-
+        Destroy(this.gameObject);
     }
 
+    public int getSerialNr()
+    {
+        return nr;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (this.CommanderEnteredEvent == null) return;
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Commander c = collision.GetComponent<Commander>();
+            if (c != null) this.CommanderEnteredEvent(this, c);
+        }
+    }
 
 }
