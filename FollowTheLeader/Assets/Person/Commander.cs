@@ -20,6 +20,9 @@ public class Commander : MonoBehaviour {
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
          Vector2 direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+			if (direction.magnitude > 1f) {
+				direction.Normalize();
+			}
          gameObject.SendMessage("Move", direction);    
         } 
 

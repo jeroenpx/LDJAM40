@@ -179,15 +179,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69eded0a6ef0f6a4082f6f5c3f9db8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followRadius: 2
+  followRadius: 1.5
   findOthers:
     serializedVersion: 2
     m_Bits: 768
   findCommander:
     serializedVersion: 2
     m_Bits: 256
-  updateProbablyTimesPerSecond: 2
-  maxlength: 10
+  updateProbablyTimesPerSecond: 8
+  updateJumpTimesPerSecond: 50
+  maxlength: 60
+  keepDistance: 0
   myLengthFromCommander: 100
 --- !u!114 &114289832706668900
 MonoBehaviour:
