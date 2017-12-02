@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212512486712606976}
   - component: {fileID: 95678460787073852}
   m_Layer: 0
-  m_Name: barbarian_0
+  m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.08
+  m_Radius: 0.25
 --- !u!95 &95678460787073852
 Animator:
   serializedVersion: 3
