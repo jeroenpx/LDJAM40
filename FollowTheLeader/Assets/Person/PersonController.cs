@@ -46,9 +46,12 @@ public class PersonController : MonoBehaviour {
 	/**
 	 * MESSAGE: Jump!
 	 */
-	[ContextMenu("Jump")]
 	public void Jump() {
 		jump = true;
+	}
+
+	public bool IsJumping() {
+		return jumping;
 	}
 
 	void FixedUpdate() {
