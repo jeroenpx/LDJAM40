@@ -28,7 +28,7 @@ public class Commander : MonoBehaviour {
 
         if(Input.GetButtonDown("Jump")) gameObject.SendMessage("Jump");
 
-        if(Input.GetButtonDown("Attack")) gameObject.SendMessage("Attack");
+        //if(Input.GetButtonDown("Attack")) gameObject.SendMessage("Attack");
     }
     
 
