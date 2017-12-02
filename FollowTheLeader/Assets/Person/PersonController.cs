@@ -41,7 +41,7 @@ public class PersonController : MonoBehaviour {
 	public void Move(Vector2 dir) {
 		moveDir = dir;
 	    if (Input.GetAxis("Horizontal") > 0) child.localScale = new Vector3(-1,1,1);
-        else child.localScale = new Vector3(1, 1, 1);
+        if(Input.GetAxis("Horizontal") < 0) child.localScale = new Vector3(1, 1, 1);
         _anim.SetFloat("Speed", 1);
     }
 
