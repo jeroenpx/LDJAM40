@@ -171,6 +171,7 @@ MonoBehaviour:
   speed: 3
   inairtime: 1
   jumpheight: 1
+  _anim: {fileID: 95678460787073852}
 --- !u!114 &114357411078701656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,7 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c819f938299d9c347be3680bb7207b3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _anim: {fileID: 95678460787073852}
 --- !u!212 &212222772515593260
 SpriteRenderer:
   m_ObjectHideFlags: 1

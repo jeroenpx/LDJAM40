@@ -14,8 +14,10 @@ public class PersonController : MonoBehaviour {
 	[SerializeField]
 	private float jumpheight = 1f;
 
-	// What to do next frame?
-	private Vector2 moveDir;
+    [SerializeField] private Animator _anim;
+
+    // What to do next frame?
+    private Vector2 moveDir;
 	private bool jump;
 	private float jumpStartTime=-100f;
 
@@ -36,7 +38,10 @@ public class PersonController : MonoBehaviour {
 	 */
 	public void Move(Vector2 dir) {
 		moveDir = dir;
-	}
+	    if (Input.GetAxis("Horizontal") > 0) child.localScale = new Vector3(-1,1,1);
+        if(Input.GetAxis("Horizontal") < 0) child.localScale = new Vector3(1, 1, 1);
+        _anim.SetFloat("Speed", 1);
+    }
 
 	/**
 	 * MESSAGE: Jump!
@@ -47,8 +52,13 @@ public class PersonController : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		// Currently just set the velocity
-		rigidBody.velocity = moveDir*speed;
+
+        //set idle animation when not walking
+	    _anim.SetFloat("Speed", 0);
+
+
+        // Currently just set the velocity
+        rigidBody.velocity = moveDir*speed;
 
 		if (jump) {
 			if (jumping && jumpStartTime < Time.time - inairtime) {
