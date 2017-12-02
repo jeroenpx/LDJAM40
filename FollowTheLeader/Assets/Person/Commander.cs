@@ -11,10 +11,10 @@ public class Commander : MonoBehaviour {
 
     private void Update()
     {
-        Movement();
+        Inputs();
     }
 
-    private void Movement()
+    private void Inputs()
     {
 
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
@@ -24,6 +24,8 @@ public class Commander : MonoBehaviour {
         } 
 
         if(Input.GetButtonDown("Jump")) gameObject.SendMessage("Jump");
+
+        if(Input.GetButtonDown("Attack")) gameObject.SendMessage("Attack");
     }
     
 
