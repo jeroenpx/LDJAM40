@@ -12,5 +12,5 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterSelect.unity
     guid: a73ac72afbb901049af6d4aa971ae0b9
   - enabled: 1
-    path: Assets/Scenes/JeroenScene2.unity
-    guid: 17d118dbefd30d44786592b700e85512
+    path: Assets/Scenes/InfiniteScene.unity
+    guid: c2646b4f33df648439d89b48a87093a4

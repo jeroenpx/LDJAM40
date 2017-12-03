@@ -1086,7 +1086,7 @@ GameObject:
   - component: {fileID: 114675800323964390}
   - component: {fileID: 114355897351103062}
   m_Layer: 0
-  m_Name: JEPE_Level 2
+  m_Name: MazeLevel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
