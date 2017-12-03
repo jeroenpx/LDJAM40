@@ -34,15 +34,32 @@ public class StartScreen : MonoBehaviour {
     }
 
     private void Update()
-    {
+	{
+		if (_startPressed) {
+			Scroll ();
+			StartGame ();
+		}
+
         if(!_startPressed) FrontPage();
-       if(_startPressed) Scroll();
-        StartGame();
     }
 
     private void StartGame()
     {
-        if (Input.GetButtonDown("Jump_p0"))
+		bool isTouching = false;
+		Touch[] ts = Input.touches;
+		foreach (Touch t in ts) {
+			if (t.phase == TouchPhase.Began) {
+				isTouching = true;
+				if (t.position.x < Screen.width / 2) {
+					// Left
+					_currentSelected = 0;
+				} else {
+					_currentSelected = 1;
+				}
+			}
+		}
+
+		if (Input.GetButtonDown("Jump_p0") || isTouching)
         {
             switch (_currentSelected)
             {
@@ -104,7 +121,15 @@ public class StartScreen : MonoBehaviour {
             _blinkCounter = 0;
         }
 
-        if (Input.GetButtonDown("Start_p0"))
+		bool isTouching = false;
+		Touch[] ts = Input.touches;
+		foreach (Touch t in ts) {
+			if (t.phase == TouchPhase.Began) {
+				isTouching = true;
+			}
+		}
+
+		if (Input.GetButtonDown("Start_p0") || isTouching)
         {
             _screens[0].SetActive(false);
             _screens[1].SetActive(true);
