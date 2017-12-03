@@ -260,6 +260,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea762e7470c274e4babac07ec326c47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiScore: {fileID: 0}
+  uiMax: {fileID: 0}
+  uiRip: {fileID: 0}
+  textScore: 'Party Size: '
+  textMax: 'HIGH SCORE: '
+  textRip: 'R.I.P.: '
 --- !u!1001 &1264525115
 Prefab:
   m_ObjectHideFlags: 0
@@ -298,6 +304,10 @@ Prefab:
     - target: {fileID: 4635770703142218, guid: 1a8894b444549544b8ee395a23e63eaa, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706385881242618, guid: 1a8894b444549544b8ee395a23e63eaa, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a8894b444549544b8ee395a23e63eaa, type: 2}
