@@ -13,7 +13,13 @@ public class characterSpawn : MonoBehaviour {
     //METHODS
     private void Awake()
     {
-        _selectionNumbers = FindObjectOfType<SelectedRoles>().CharacterNumbers;
+		SelectedRoles roles = FindObjectOfType<SelectedRoles> ();
+
+		if (roles == null) {
+			_selectionNumbers = new int[] { 0 };
+		} else {
+			_selectionNumbers = FindObjectOfType<SelectedRoles>().CharacterNumbers;
+		}
 
         for (int i = 0; i < _selectionNumbers.Length; i++)
         {

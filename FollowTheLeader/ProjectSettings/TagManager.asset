@@ -16,7 +16,7 @@ TagManager:
   - 
   - Commander
   - Follower
-  - 
+  - Splat
   - 
   - 
   - 
@@ -41,6 +41,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Blood
+    uniqueID: 3736561793
+    locked: 0
+  - name: Traps
+    uniqueID: 3874616461
     locked: 0
   - name: Blades
     uniqueID: 20307027
