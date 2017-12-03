@@ -46,11 +46,14 @@ TagManager:
   - name: Blood
     uniqueID: 3736561793
     locked: 0
-  - name: Traps
-    uniqueID: 3874616461
+  - name: Tracks
+    uniqueID: 3010863757
     locked: 0
   - name: Decoration
     uniqueID: 3081006339
+    locked: 0
+  - name: Traps
+    uniqueID: 3874616461
     locked: 0
   - name: Blades
     uniqueID: 20307027
