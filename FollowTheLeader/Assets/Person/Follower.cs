@@ -58,6 +58,7 @@ public class Follower : MonoBehaviour {
 		if (closestOtherGuy) {
 			closestOtherGuyController.areFollowingMe.Remove (this);
 		}
+		GameObject.FindWithTag ("ScoreMgr").GetComponent<ScoreManager> ().IncreaseDeath ();
 	}
 	
 	// Update is called once per frame
