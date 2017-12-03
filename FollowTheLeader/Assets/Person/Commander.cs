@@ -8,6 +8,9 @@ public class Commander : MonoBehaviour {
 	private PersonController myController;
 	private ScoreManager scoreManager;
     private int _playerNumber;
+
+	private int fingerForMove = -1;
+	private Vector3 fingerForMoveStart = Vector3.zero;
     
     //METHODS
 
@@ -25,6 +28,8 @@ public class Commander : MonoBehaviour {
     private void Update()
     {
         Inputs();
+
+		MobileInputs ();
 
 		scoreManager.UpdateScore(myController.GetFollowerGroupCount ());
     }
@@ -44,7 +49,56 @@ public class Commander : MonoBehaviour {
         if(Input.GetButtonDown("Jump_p"+PlayerNumber)) gameObject.SendMessage("Jump");
 
         //if(Input.GetButtonDown("Attack")) gameObject.SendMessage("Attack");
-    }
+	}
+
+	private void MobileInputs() {
+		// Screen size
+		Vector2 size = new Vector2(Screen.width, Screen.height);
+
+		for (int i = 0; i < Input.touchCount; ++i)
+		{
+			Touch t = Input.GetTouch(i);
+			if (fingerForMove == t.fingerId) {
+				if (t.phase == TouchPhase.Ended) {
+					// Released the finger!
+					fingerForMove = -1;
+					return;
+				}
+				if (t.phase == TouchPhase.Moved || t.phase == TouchPhase.Stationary) {
+					// Moving the finger!
+
+					Vector2 direction = (t.position - size / 2)/(Screen.height);
+					if (direction.magnitude > 1) {
+						direction.Normalize ();
+					}
+					SendMessage ("Move", direction);
+				}
+			}
+
+			if (fingerForMove == -1) {
+				// We are not touching to move yet
+
+				// Check if the finger just started in the range!
+				if (t.phase == TouchPhase.Began) {
+					Vector2 pos = t.position;
+					if ((pos - size / 2).magnitude / (Screen.height) < 1f) {
+						// Touch is in center part of screen (circle with radius 50% of height of screen)
+						fingerForMove = t.fingerId;
+					} else {
+						gameObject.SendMessage("Jump");
+					}
+				}
+			}
+
+			// Jump!
+			if (t.phase == TouchPhase.Began) {
+				Vector2 pos = t.position;
+				if ((pos - size / 2).magnitude / (Screen.height) > 1f) {
+					gameObject.SendMessage("Jump");
+				}
+			}
+		}
+	}
     
 
 }

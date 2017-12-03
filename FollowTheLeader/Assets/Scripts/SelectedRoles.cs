@@ -18,7 +18,12 @@ public class SelectedRoles : MonoBehaviour {
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        _characterNumbers = new int[_players.Length];
+		_characterNumbers = new int[_players.Length];
+
+		#if UNITY_ANDROID
+		ReadyCount = 1;
+		JoinedCount = 1;
+		#endif
     }
 
     private void Update()
@@ -28,6 +33,10 @@ public class SelectedRoles : MonoBehaviour {
 
         if (!PlayingGame && _readyCount == _joinedCount && _readyCount >= 1)
         {
+			#if UNITY_ANDROID
+			_characterNumbers[0]=0;
+			#endif
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             PlayingGame = true;
         }
