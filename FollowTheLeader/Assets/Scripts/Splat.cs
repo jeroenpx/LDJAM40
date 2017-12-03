@@ -18,6 +18,7 @@ public class Splat : MonoBehaviour {
 		startTime = Time.time;
 		child = transform.Find ("Graphics");
 		spread = Random.insideUnitCircle*spreadSize;
+		transform.rotation = Quaternion.AngleAxis (Random.value * 360, Vector3.forward);
 	}
 	
 	// Update is called once per frame
@@ -37,11 +38,11 @@ public class Splat : MonoBehaviour {
 		Collider2D c = GetComponent<Collider2D> ();
 		GameObject.Destroy (r);
 		GameObject.Destroy (c);
-		startTime = -1000;
 		if (startTime > Time.time - inairtime) {
 			float t = (Time.time - startTime) / inairtime;
 			child.localPosition = spread;
 		}
+		startTime = -1000;
 		// Remove script
 		Destroy (this);
 	}

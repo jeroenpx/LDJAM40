@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splat: {fileID: 4883309646987234, guid: 5393c2e24b868a54da2051b6189bfb06, type: 2}
-  count: 30
+  count: 1
 --- !u!212 &212408321017765368
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -258,7 +258,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1419121083
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4fdcb5d5d49bb54488757e32f1e74949, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.34509805}
@@ -302,7 +302,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 344829567
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: c9fbc6c796fb80d469750118f140a882, type: 3}
   m_Color: {r: 1, g: 0.5808823, b: 0.5808823, a: 1}
