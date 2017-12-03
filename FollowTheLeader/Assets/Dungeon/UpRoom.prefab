@@ -3429,7 +3429,7 @@ GameObject:
   - component: {fileID: 114737862384130548}
   - component: {fileID: 114349229076974136}
   m_Layer: 0
-  m_Name: UpSquare
+  m_Name: UpRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
