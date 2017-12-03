@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - FollowerSpawnPoint
+  - ScoreMgr
   layers:
   - Default
   - TransparentFX
