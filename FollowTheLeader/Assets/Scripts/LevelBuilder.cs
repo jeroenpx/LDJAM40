@@ -36,6 +36,7 @@ public class LevelBuilder : MonoBehaviour {
         {
             SquareBehaviour trail = levels.Dequeue();
             trail.Dissolve();
+			levels.Peek ().CloseStart ();
         }
     }
 
