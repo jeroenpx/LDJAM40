@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FollowerSpawnPoint
   - ScoreMgr
+  - MagicMovingWall
   layers:
   - Default
   - TransparentFX

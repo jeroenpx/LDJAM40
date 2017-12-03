@@ -36,6 +36,16 @@ public class SquareBehaviour : MonoBehaviour {
         Destroy(this.gameObject);
     }
 
+	public void CloseStart() {
+		GameObject.FindGameObjectWithTag ("MagicMovingWall").transform.position = this.entrance.position;
+		PersonController[] people = GameObject.FindObjectsOfType<PersonController> ();
+		foreach (PersonController person in people) {
+			if (person.transform.position.x < this.entrance.position.x) {
+				person.KillMyself ();
+			}
+		}
+	}
+
     public int getSerialNr()
     {
         return nr;

@@ -37,6 +37,7 @@ public class LevelBuilderFixedOrder : MonoBehaviour {
         {
             SquareBehaviour trail = levels.Dequeue();
             trail.Dissolve();
+			levels.Peek ().CloseStart ();
         }
     }
 
