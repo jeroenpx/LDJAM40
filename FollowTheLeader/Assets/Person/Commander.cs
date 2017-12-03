@@ -31,7 +31,7 @@ public class Commander : MonoBehaviour {
 
 		MobileInputs ();
 
-		scoreManager.UpdateScore(myController.GetFollowerGroupCount ());
+		scoreManager.UpdateScore(_playerNumber, myController.GetFollowerGroupCount ());
     }
 
     private void Inputs()
