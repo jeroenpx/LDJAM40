@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - FollowerSpawnPoint
+  - ScoreMgr
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,12 @@ TagManager:
     locked: 0
   - name: Blood
     uniqueID: 3736561793
+    locked: 0
+  - name: Tracks
+    uniqueID: 3010863757
+    locked: 0
+  - name: Decoration
+    uniqueID: 3081006339
     locked: 0
   - name: Traps
     uniqueID: 3874616461
