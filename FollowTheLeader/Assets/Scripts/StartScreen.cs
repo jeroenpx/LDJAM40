@@ -47,7 +47,7 @@ public class StartScreen : MonoBehaviour {
             switch (_currentSelected)
             {
                 case 0:
-                    //SceneManager.LoadScene(3);
+                    SceneManager.LoadScene(3);
                     break;
 
                 case 1:
