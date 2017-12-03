@@ -7,8 +7,8 @@ public class LevelBlockBuilder : MonoBehaviour {
     private static readonly int MAX_FLOOR_WIDTH = 18;
     private static readonly int MAX_FLOOR_HEIGT = 20;
     private static readonly int MAX_BIG_WALL_WIDTH = 18;
-    private static readonly int MAX_BIG_WALL_HEIGHT = 3;
-    private static readonly int MAX_SIDE_WALL_HEIGHT = 23;
+    private static readonly int MAX_BIG_WALL_HEIGHT = 2;
+    private static readonly int MAX_SIDE_WALL_HEIGHT = 22;
     private static readonly int MAX_SIDE_WALL_WIDTH = 1;
 
 
@@ -67,9 +67,6 @@ public class LevelBlockBuilder : MonoBehaviour {
                 if (i == 0) {
                     //Top wall
                     tile = Instantiate<GameObject>(prefabs[21]);
-                } else if (i == -1) {
-                    //Back wall
-                    tile = Instantiate<GameObject>(prefabs[0]);
                 } else {
                     //Border wall
                     tile = Instantiate<GameObject>(prefabs[1]);
@@ -97,23 +94,17 @@ public class LevelBlockBuilder : MonoBehaviour {
                     //Left wall corner
                     tile = Instantiate<GameObject>(prefabs[9]);
                 } else if (i == -1) {
-                    //Left wall back wall
-                    tile = Instantiate<GameObject>(prefabs[7]);
-                } else if(i == -2) {
                     //Left wall back wall border
                     tile = Instantiate<GameObject>(prefabs[8]);
-                } else if (i == -3) {
+                } else if(i == -2) {
                     //Left wall top floor
                     tile = Instantiate<GameObject>(prefabs[11]);
-                } else if (i < -3 && i > -MAX_SIDE_WALL_HEIGHT + 4) {
+                } else if (i <= -3 && i > -MAX_SIDE_WALL_HEIGHT + 3) {
                     //Left wall floor
                     tile = Instantiate<GameObject>(prefabs[10]);
-                } else if (i == -MAX_SIDE_WALL_HEIGHT + 4) {
+                } else if (i == -MAX_SIDE_WALL_HEIGHT + 3) {
                     //Left top door
                     tile = Instantiate<GameObject>(prefabs[13]);
-                } else if (i == -MAX_SIDE_WALL_HEIGHT + 3) {
-                    //Left mid door 
-                    tile = Instantiate<GameObject>(prefabs[14]);
                 } else if (i == -MAX_SIDE_WALL_HEIGHT + 2) {
                     //Left bottom door
                     tile = Instantiate<GameObject>(prefabs[15]);
@@ -144,23 +135,17 @@ public class LevelBlockBuilder : MonoBehaviour {
                     //Right wall corner
                     tile = Instantiate<GameObject>(prefabs[18]);
                 } else if (i == -1) {
-                    //Right wall back wall
-                    tile = Instantiate<GameObject>(prefabs[16]);
-                } else if (i == -2) {
                     //Right wall back wall border
                     tile = Instantiate<GameObject>(prefabs[17]);
-                } else if (i == -3) {
+                } else if (i == -2) {
                     //Right wall top floor
                     tile = Instantiate<GameObject>(prefabs[22]);
-                } else if (i < -3 && i > -MAX_SIDE_WALL_HEIGHT + 4) {
+                } else if (i <= -3 && i > -MAX_SIDE_WALL_HEIGHT + 3) {
                     //Right wall floor
                     tile = Instantiate<GameObject>(prefabs[19]);
-                } else if (i == -MAX_SIDE_WALL_HEIGHT + 4) {
+                } else if (i == -MAX_SIDE_WALL_HEIGHT + 3) {
                     //Right top door
                     tile = Instantiate<GameObject>(prefabs[6]);
-                } else if (i == -MAX_SIDE_WALL_HEIGHT + 3) {
-                    //Right mid door 
-                    tile = Instantiate<GameObject>(prefabs[5]);
                 } else if (i == -MAX_SIDE_WALL_HEIGHT + 2) {
                     //Right bottom door
                     tile = Instantiate<GameObject>(prefabs[4]);
