@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 95346835104619984}
-  _minCooldown: 0
+  _minCooldown: 1
   _maxCooldown: 10
 --- !u!212 &212281328754537350
 SpriteRenderer:

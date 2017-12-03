@@ -6,7 +6,7 @@ public class PersonController : MonoBehaviour {
 
 	// Settings
 	[SerializeField]
-	private float speed = 1f;
+	public float speed = 1f;
 
 	[SerializeField]
 	private float inairtime = 1f;
@@ -14,12 +14,19 @@ public class PersonController : MonoBehaviour {
 	[SerializeField]
 	private float jumpheight = 1f;
 
+	[SerializeField]
+	private float instantJumpSpeedPercent = 0.7f;
+
     [SerializeField] private Animator _anim;
+
+    [SerializeField] private int _playerNumber;
 
     // What to do next frame?
     private Vector2 moveDir;
 	private bool jump;
 	private float jumpStartTime=-100f;
+	private Vector3 lastPosition = Vector3.zero;
+	public Vector3 runningAvgSpeed = Vector3.zero;
 
 	// Private components
 	private Rigidbody2D rigidBody;
@@ -27,19 +34,42 @@ public class PersonController : MonoBehaviour {
 	private Vector3 childDelta;
 	private bool jumping;
 
+	private Vector3 debugJumpStartPos;
+
+	// People that are following me should update this!!!
+	// KEEP THIS UP TO DATE
+	public List<Follower> areFollowingMe;
+
 	void Awake() {
 		rigidBody = GetComponent<Rigidbody2D> ();
 		child = transform.Find ("Graphics");
 		childDelta = child.localPosition;
+		lastPosition = transform.position;
+		areFollowingMe = new List<Follower> ();
 	}
+
+	public int GetFollowerGroupCount() {
+		int count = 0;
+		foreach(Follower follower in areFollowingMe) {
+			count += follower.myController.GetFollowerGroupCount ();
+		}
+		return 1 + count;
+	}
+
+
+    public int PlayerNumber
+    {
+        get { return _playerNumber; }
+        set { _playerNumber = value; }
+    }
 
 	/**
 	 * MESSAGE: Move in a certain direction
 	 */
 	public void Move(Vector2 dir) {
 		moveDir = dir;
-	    if (Input.GetAxis("Horizontal") > 0) child.localScale = new Vector3(-1,1,1);
-        if(Input.GetAxis("Horizontal") < 0) child.localScale = new Vector3(1, 1, 1);
+	    if (Input.GetAxis("Horizontal_p"+PlayerNumber) > 0) child.localScale = new Vector3(-1,1,1);
+        if(Input.GetAxis("Horizontal_p"+PlayerNumber) < 0) child.localScale = new Vector3(1, 1, 1);
         _anim.SetFloat("Speed", 1);
     }
 
@@ -50,29 +80,78 @@ public class PersonController : MonoBehaviour {
 		jump = true;
 	}
 
+	/**
+	 * PUBLIC: Are we jumping?
+	 */
 	public bool IsJumping() {
 		return jumping;
 	}
 
+	/**
+	 * MESSAGE: Hit something that kills me on the ground
+	 */
+	public void GotHitGround() {
+		if (!IsJumping ()) {
+			KillMyself ();
+		}
+	}
+
+	/**
+	 * MESSAGE: Hit something that kills me
+	 */
+	public void GotHit() {
+		KillMyself ();
+	}
+
+	/**
+	 * All actions needed to kill myself...
+	 */
+	public void KillMyself() {
+		foreach (Follower follower in areFollowingMe) {
+			follower.ClosestGuyDied ();
+		}
+		SendMessage ("FinalizeDeath");
+		Destroy (gameObject);
+	}
+
+	/**
+	 * Physics
+	 */
 	void FixedUpdate() {
 
         //set idle animation when not walking
 	    _anim.SetFloat("Speed", 0);
 
+		// Update runningAvgSpeed
+		if (!jumping) {
+			Vector3 lastSpeed = (transform.position - lastPosition) / Time.fixedDeltaTime;
+			runningAvgSpeed = lastSpeed * instantJumpSpeedPercent + runningAvgSpeed * (1 - instantJumpSpeedPercent);
+			if (runningAvgSpeed.magnitude > speed) {
+				runningAvgSpeed = runningAvgSpeed.normalized * speed;
+			}
+		}
+		lastPosition = transform.position;
 
         // Currently just set the velocity
-        rigidBody.velocity = moveDir*speed;
+		if (!jumping) {
+			// Do not allow changing direction mid flight
+			rigidBody.velocity = moveDir * speed;
+		} else {
+			rigidBody.velocity = runningAvgSpeed;
+		}
 
 		if (jump) {
 			if (jumping && jumpStartTime < Time.time - inairtime) {
 				// end of jump
 				jump = false;
 				jumping = false;
+				Debug.DrawLine(debugJumpStartPos, transform.position, Color.blue, 20f);
 			} else {
 				if (!jumping) {
 					// start jumping
 					jumping = true;
 					jumpStartTime = Time.time;
+					debugJumpStartPos = transform.position;
 				}
 			}
 			if (jumping) {
