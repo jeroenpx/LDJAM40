@@ -14225,6 +14225,9 @@ MonoBehaviour:
   - {fileID: 114858448291709896, guid: bb614802a0c300f4d8e54aa85f18a42e, type: 2}
   - {fileID: 114737862384130548, guid: e4b38f1f70f9a1849abc28f09125a489, type: 2}
   - {fileID: 114391984146733794, guid: b0e888e8d9419e24c924d67a9674c374, type: 2}
+  - {fileID: 114584444665692378, guid: 56488338c9849f34592eb6f136f873ba, type: 2}
+  - {fileID: 114563433996273456, guid: d5a2621943ae8564b9754871c8f74c55, type: 2}
+  - {fileID: 114692913813537184, guid: 5b185270e482f564bb496320dc01e5af, type: 2}
   followerSpawnRadius: 2
   followerSpawnProb: 0.8
   followerSpawnMin: 2
