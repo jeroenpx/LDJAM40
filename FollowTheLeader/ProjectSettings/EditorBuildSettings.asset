@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TristanScene.unity
+    path: Assets/Scenes/StartScreen.unity
+    guid: 92c91f5248e95ec4b90a47b60686c4a4
+  - enabled: 1
+    path: Assets/Scenes/CharacterSelect.unity
     guid: a73ac72afbb901049af6d4aa971ae0b9
   - enabled: 1
     path: Assets/Scenes/JeroenScene2.unity

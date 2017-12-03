@@ -10,6 +10,10 @@ public class LevelBlockBuilder : MonoBehaviour {
     private static readonly int MAX_BIG_WALL_HEIGHT = 2;
     private static readonly int MAX_SIDE_WALL_HEIGHT = 23;
     private static readonly int MAX_SIDE_WALL_WIDTH = 1;
+    private static readonly int MAX_VERTICAL_WALL_HEIGHT = 20;
+    private static readonly int MAX_VERTICAL_WALL_WIDTH = 2;
+    private static readonly int MAX_HORIZONTAL_WALL_WIDH = 2;
+    private static readonly int MAX_HORIZONTAL_WALL_HEIGHT = 20;
 
 
     public GameObject[] prefabs;
