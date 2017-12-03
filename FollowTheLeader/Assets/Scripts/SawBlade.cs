@@ -35,9 +35,8 @@ public class SawBlade : MonoBehaviour {
         transform.position += Vector3.Normalize(new Vector3(direction.x, direction.y, 0)) *_speed * Time.deltaTime;
         
 
-        Debug.Log("Dist" + Vector2.Distance(_Stops[_currentStop].position, transform.position));
-
-        Debug.Log("Stop" +_currentStop);
+        //Debug.Log("Dist" + Vector2.Distance(_Stops[_currentStop].position, transform.position));
+        //Debug.Log("Stop" +_currentStop);
 
 
         
