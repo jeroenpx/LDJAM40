@@ -19,14 +19,8 @@ public class LevelBuilder : MonoBehaviour {
 
     private void Awake()
     {
-        connectSquare.CommanderEnteredEvent += CommanderEnteredEvent;
-    }
-
-    private void Start()
-    {
+        connectSquare.CommanderEnteredEvent += CommanderEnteredHandler;
         levels = new Queue<SquareBehaviour>();
-        //connectSquare = Instantiate<SquareBehaviour>(prefabs[Random.Range(0, prefabs.Length)]);
-        //connectSquare.transform.position = Vector3.zero;
         levels.Enqueue(connectSquare);
     }
 
@@ -55,7 +49,7 @@ public class LevelBuilder : MonoBehaviour {
     {
         SquareBehaviour result = Instantiate<SquareBehaviour>(prefabs[Random.Range(0, prefabs.Length)]);
         result.transform.SetParent(this.transform);
-        result.CommanderEnteredEvent += CommanderEnteredEvent;
+        result.CommanderEnteredEvent += CommanderEnteredHandler;
         result.LinkToPrevious(connectSquare);
 		BuildFollowers (result.transform);
         return result;
@@ -78,11 +72,25 @@ public class LevelBuilder : MonoBehaviour {
 		}
 	}
 
-    private void CommanderEnteredEvent(SquareBehaviour s, Commander c)
+    private void CommanderEnteredHandler(SquareBehaviour s, Commander c)
     {
         if (s.getSerialNr() > highestNr)
         {
             highestNr = s.getSerialNr();
         }
+    }
+
+    public void AddSquareFromTutorial(SquareBehaviour s)
+    {
+        if (s.getSerialNr() < connectSquare.getSerialNr())
+        {
+            Debug.LogError("squares from tutorial have been added in the wrong sequence; this would have them destroyed in the wrong order");
+        }
+        else
+        {
+            this.connectSquare = s;
+        }
+        s.CommanderEnteredEvent += CommanderEnteredHandler;
+        levels.Enqueue(s);
     }
 }
