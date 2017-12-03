@@ -37,7 +37,8 @@ public class Commander : MonoBehaviour {
     private void Inputs()
     {
 
-        if (Input.GetAxis("Horizontal_p"+ PlayerNumber) != 0 || Input.GetAxis("Vertical_p" + PlayerNumber) != 0)
+        if (Input.GetAxis("Horizontal_p"+ PlayerNumber) > 0.1f || Input.GetAxis("Vertical_p" + PlayerNumber) > 0.1f 
+            || Input.GetAxis("Vertical_p" + PlayerNumber) < -0.1f || Input.GetAxis("Horizontal_p" + PlayerNumber) < -0.1f)
         {
          Vector2 direction = new Vector2(Input.GetAxis("Horizontal_p"+PlayerNumber), Input.GetAxis("Vertical_p" + PlayerNumber));
 			if (direction.magnitude > 1f) {

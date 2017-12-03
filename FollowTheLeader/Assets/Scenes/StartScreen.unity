@@ -122,7 +122,7 @@ Prefab:
     - target: {fileID: 224285412972858668, guid: d84fa71e3c02fbb45b8155a749c2be97,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 328
+      value: 530.5
       objectReference: {fileID: 0}
     - target: {fileID: 224285412972858668, guid: d84fa71e3c02fbb45b8155a749c2be97,
         type: 2}
@@ -219,17 +219,12 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.000030517578
       objectReference: {fileID: 0}
-    - target: {fileID: 224605087541700250, guid: d84fa71e3c02fbb45b8155a749c2be97,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224261598683600354, guid: d84fa71e3c02fbb45b8155a749c2be97,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 224802925152437956, guid: d84fa71e3c02fbb45b8155a749c2be97,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224605087541700250, guid: d84fa71e3c02fbb45b8155a749c2be97,
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -239,19 +234,15 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224506597847740056, guid: d84fa71e3c02fbb45b8155a749c2be97,
+    - target: {fileID: 224261598683600354, guid: d84fa71e3c02fbb45b8155a749c2be97,
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1967396896882556, guid: d84fa71e3c02fbb45b8155a749c2be97, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114742329697925408, guid: d84fa71e3c02fbb45b8155a749c2be97,
+    - target: {fileID: 224506597847740056, guid: d84fa71e3c02fbb45b8155a749c2be97,
         type: 2}
-      propertyPath: m_PreserveAspect
-      value: 1
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d84fa71e3c02fbb45b8155a749c2be97, type: 2}
@@ -297,7 +288,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.2901961, g: 0.3647059, b: 0.45882353, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
