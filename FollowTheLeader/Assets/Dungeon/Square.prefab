@@ -3358,13 +3358,10 @@ GameObject:
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 4662309779925520}
   - component: {fileID: 61520876358622302}
-=======
   - component: {fileID: 4503732366043102}
   - component: {fileID: 212670212447110746}
->>>>>>> f524bc23ee43a32a3f5d7264a04d99eea66ed42d
   m_Layer: 0
   m_Name: Floor(Clone)
   m_TagString: Untagged
@@ -14051,7 +14048,6 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1505158033289318}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7, y: -13, z: 0}
@@ -15402,9 +15398,6 @@ SpriteRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1148838602947060}
-=======
-  m_GameObject: {fileID: 1427554730883578}
->>>>>>> f524bc23ee43a32a3f5d7264a04d99eea66ed42d
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb1224451a8d8e341994e0c8959044c6, type: 3}
