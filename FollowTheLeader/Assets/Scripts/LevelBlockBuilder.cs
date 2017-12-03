@@ -54,7 +54,7 @@ public class LevelBlockBuilder : MonoBehaviour {
     }
 
     [ContextMenu("GenerateBackWall")]
-    public void GenerateBigWall() {
+    public void GenerateBackWall() {
 
         GameObject wallParent = new GameObject("BackWall");
 
@@ -62,8 +62,18 @@ public class LevelBlockBuilder : MonoBehaviour {
 
             for (int j = 0; j < MAX_BIG_WALL_WIDTH; j++) {
 
-                //Back wall
-                GameObject tile = Instantiate<GameObject>(prefabs[0]);
+                GameObject tile;
+
+                if (i == 0) {
+                    //Top wall
+                    tile = Instantiate<GameObject>(prefabs[21]);
+                } else if (i == -1) {
+                    //Back wall
+                    tile = Instantiate<GameObject>(prefabs[0]);
+                } else {
+                    //Border wall
+                    tile = Instantiate<GameObject>(prefabs[1]);
+                }
 
                 wallParent.transform.SetParent(this.transform);
                 tile.transform.position = new Vector3(j, i, 0);
@@ -73,7 +83,7 @@ public class LevelBlockBuilder : MonoBehaviour {
     }
 
     [ContextMenu("GenerateLeftWall")]
-    public void GenerateSmallWall() {
+    public void GenerateLeftWall() {
 
         GameObject wallParent = new GameObject("LeftWall");
 
@@ -86,13 +96,16 @@ public class LevelBlockBuilder : MonoBehaviour {
                 if (i == 0) {
                     //Left wall corner
                     tile = Instantiate<GameObject>(prefabs[9]);
-                } else if (i < 0 && i > -3) {
+                } else if (i == -1) {
                     //Left wall back wall
                     tile = Instantiate<GameObject>(prefabs[7]);
+                } else if(i == -2) {
+                    //Left wall back wall border
+                    tile = Instantiate<GameObject>(prefabs[8]);
                 } else if (i == -3) {
                     //Left wall top floor
                     tile = Instantiate<GameObject>(prefabs[11]);
-                } else if (i < -3 && i > -MAX_SIDE_WALL_HEIGHT + 3) {
+                } else if (i < -3 && i > -MAX_SIDE_WALL_HEIGHT + 4) {
                     //Left wall floor
                     tile = Instantiate<GameObject>(prefabs[10]);
                 } else if (i == -MAX_SIDE_WALL_HEIGHT + 4) {
@@ -102,7 +115,7 @@ public class LevelBlockBuilder : MonoBehaviour {
                     //Left mid door 
                     tile = Instantiate<GameObject>(prefabs[14]);
                 } else if (i == -MAX_SIDE_WALL_HEIGHT + 2) {
-                    //left bottom door
+                    //Left bottom door
                     tile = Instantiate<GameObject>(prefabs[15]);
                 } else {
                     //Bottom wall
@@ -114,7 +127,52 @@ public class LevelBlockBuilder : MonoBehaviour {
                 tile.transform.SetParent(wallParent.transform);
             }
         }
+    }
 
+    [ContextMenu("GenerateRightWall")]
+    public void GenerateRightWall() {
 
+        GameObject wallParent = new GameObject("RightWall");
+
+        for (int i = 0; i > -MAX_SIDE_WALL_HEIGHT; i--) {
+
+            for (int j = 0; j < MAX_SIDE_WALL_WIDTH; j++) {
+
+                GameObject tile;
+
+                if (i == 0) {
+                    //Right wall corner
+                    tile = Instantiate<GameObject>(prefabs[18]);
+                } else if (i == -1) {
+                    //Right wall back wall
+                    tile = Instantiate<GameObject>(prefabs[16]);
+                } else if (i == -2) {
+                    //Right wall back wall border
+                    tile = Instantiate<GameObject>(prefabs[17]);
+                } else if (i == -3) {
+                    //Right wall top floor
+                    tile = Instantiate<GameObject>(prefabs[22]);
+                } else if (i < -3 && i > -MAX_SIDE_WALL_HEIGHT + 4) {
+                    //Right wall floor
+                    tile = Instantiate<GameObject>(prefabs[19]);
+                } else if (i == -MAX_SIDE_WALL_HEIGHT + 4) {
+                    //Right top door
+                    tile = Instantiate<GameObject>(prefabs[6]);
+                } else if (i == -MAX_SIDE_WALL_HEIGHT + 3) {
+                    //Right mid door 
+                    tile = Instantiate<GameObject>(prefabs[5]);
+                } else if (i == -MAX_SIDE_WALL_HEIGHT + 2) {
+                    //Right bottom door
+                    tile = Instantiate<GameObject>(prefabs[4]);
+                } else {
+                    //Bottom wall
+                    tile = Instantiate<GameObject>(prefabs[2]);
+                }
+
+                wallParent.transform.SetParent(this.transform);
+                tile.transform.position = new Vector3(j, i, 0);
+                tile.transform.SetParent(wallParent.transform);
+            }
+        }
     }
 }
