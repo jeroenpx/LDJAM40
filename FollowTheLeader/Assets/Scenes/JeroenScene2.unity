@@ -339,6 +339,7 @@ MonoBehaviour:
   - {fileID: 114737862384130548, guid: e4b38f1f70f9a1849abc28f09125a489, type: 2}
   - {fileID: 114391984146733794, guid: b0e888e8d9419e24c924d67a9674c374, type: 2}
   - {fileID: 114651297943812662, guid: 0f431d748a3436a489b15c4285673084, type: 2}
+  - {fileID: 114647813369372050, guid: 36de1748c0c48394490d6f6f4efb7b9c, type: 2}
   followerSpawnRadius: 2
   followerSpawnProb: 0.8
   followerSpawnMin: 2
