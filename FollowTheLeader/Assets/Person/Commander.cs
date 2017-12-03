@@ -67,7 +67,7 @@ public class Commander : MonoBehaviour {
 				if (t.phase == TouchPhase.Moved || t.phase == TouchPhase.Stationary) {
 					// Moving the finger!
 
-					Vector3 direction = (t.position - size / 2)/(.5f*Screen.height);
+					Vector2 direction = (t.position - size / 2)/(Screen.height);
 					if (direction.magnitude > 1) {
 						direction.Normalize ();
 					}
@@ -81,12 +81,20 @@ public class Commander : MonoBehaviour {
 				// Check if the finger just started in the range!
 				if (t.phase == TouchPhase.Began) {
 					Vector2 pos = t.position;
-					if ((pos - size / 2).magnitude / (.5f * Screen.height) < 1f) {
+					if ((pos - size / 2).magnitude / (Screen.height) < 1f) {
 						// Touch is in center part of screen (circle with radius 50% of height of screen)
 						fingerForMove = t.fingerId;
 					} else {
 						gameObject.SendMessage("Jump");
 					}
+				}
+			}
+
+			// Jump!
+			if (t.phase == TouchPhase.Began) {
+				Vector2 pos = t.position;
+				if ((pos - size / 2).magnitude / (Screen.height) > 1f) {
+					gameObject.SendMessage("Jump");
 				}
 			}
 		}

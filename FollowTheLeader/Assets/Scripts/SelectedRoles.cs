@@ -33,6 +33,10 @@ public class SelectedRoles : MonoBehaviour {
 
         if (!PlayingGame && _readyCount == _joinedCount && _readyCount >= 1)
         {
+			#if UNITY_ANDROID
+			_characterNumbers[0]=0;
+			#endif
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             PlayingGame = true;
         }
