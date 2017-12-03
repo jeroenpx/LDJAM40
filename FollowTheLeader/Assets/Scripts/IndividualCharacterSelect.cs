@@ -102,7 +102,7 @@ public class IndividualCharacterSelect : MonoBehaviour
     private void Scroll()
     {
             
-        if (Input.GetAxis("Vertical_p" + PlayerNumber) < 0)
+        if (Input.GetAxis("Vertical_p" + PlayerNumber) < -0.5)
         {
             _scrollCounter += Time.deltaTime;
             if (_scrollCounter >= _scrollDelay)
@@ -113,7 +113,7 @@ public class IndividualCharacterSelect : MonoBehaviour
             }
         }
 
-        if (Input.GetAxis("Vertical_p" + PlayerNumber) > 0)
+        if (Input.GetAxis("Vertical_p" + PlayerNumber) > 0.5)
         {
             _scrollCounter += Time.deltaTime;
             if (_scrollCounter >= _scrollDelay)
