@@ -14228,6 +14228,8 @@ MonoBehaviour:
   - {fileID: 114584444665692378, guid: 56488338c9849f34592eb6f136f873ba, type: 2}
   - {fileID: 114563433996273456, guid: d5a2621943ae8564b9754871c8f74c55, type: 2}
   - {fileID: 114692913813537184, guid: 5b185270e482f564bb496320dc01e5af, type: 2}
+  - {fileID: 114594022095561650, guid: 9d1af161136e5624b9fcce1887bbf1cf, type: 2}
+  - {fileID: 114767563377433094, guid: df6de5def4f1f3c4bbc0c751027d3a10, type: 2}
   followerSpawnRadius: 2
   followerSpawnProb: 0.8
   followerSpawnMin: 2
