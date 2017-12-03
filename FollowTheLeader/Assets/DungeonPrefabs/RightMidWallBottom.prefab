@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4298106541008630}
   - component: {fileID: 212125073370863020}
   m_Layer: 0
-  m_Name: level_11
+  m_Name: RightMidWallBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
