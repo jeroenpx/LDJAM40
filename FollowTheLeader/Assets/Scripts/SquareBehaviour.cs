@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SquareBehaviour : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class SquareBehaviour : MonoBehaviour {
 
     public delegate void CommanderEnteredHandler(SquareBehaviour s, Commander c);
     public event CommanderEnteredHandler CommanderEnteredEvent;
+
+    [SerializeField] private bool _isEnd;
 
 	// Use this for initialization
 	void Awake () {
@@ -53,13 +56,19 @@ public class SquareBehaviour : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (this.CommanderEnteredEvent == null) return;
-
-        if (collision.gameObject.CompareTag("Player"))
+        if (!_isEnd)
         {
-            Commander c = collision.GetComponent<Commander>();
-            if (c != null) this.CommanderEnteredEvent(this, c);
+            if (this.CommanderEnteredEvent == null) return;
+
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                Commander c = collision.GetComponent<Commander>();
+                if (c != null) this.CommanderEnteredEvent(this, c);
+            }
         }
+
+        if(_isEnd) SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
+
     }
 
 }

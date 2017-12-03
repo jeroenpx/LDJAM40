@@ -40,8 +40,8 @@ public class CameraFollow : MonoBehaviour {
 			// Everyone died
 			Time.timeScale = 0f;
 			totalDeadTime += Time.unscaledDeltaTime;
-			if (totalDeadTime > 5) {
-				SceneManager.LoadScene(0);
+			if (totalDeadTime > 0.5f) {
+				SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings-1);
 			}
 		}
 	}
