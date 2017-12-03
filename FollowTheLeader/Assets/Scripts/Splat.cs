@@ -19,6 +19,12 @@ public class Splat : MonoBehaviour {
 		child = transform.Find ("Graphics");
 		spread = Random.insideUnitCircle*spreadSize;
 		transform.rotation = Quaternion.AngleAxis (Random.value * 360, Vector3.forward);
+		StartCoroutine (WaitForDestroy ());
+	}
+
+	IEnumerator WaitForDestroy() {
+		yield return new WaitForSeconds (400);
+		Destroy (gameObject);
 	}
 	
 	// Update is called once per frame
