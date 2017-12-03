@@ -9,6 +9,12 @@ public class PersonController : MonoBehaviour {
 	public float speed = 1f;
 
 	[SerializeField]
+	public float dashSpeed = 10f;
+
+	[SerializeField]
+	public float dashTime = 1f;
+
+	[SerializeField]
 	private float inairtime = 1f;
 
 	[SerializeField]
@@ -33,6 +39,8 @@ public class PersonController : MonoBehaviour {
 	private Transform child;
 	private Vector3 childDelta;
 	private bool jumping;
+
+	private float startDashTime= -1000;
 
 	private Vector3 debugJumpStartPos;
 
@@ -68,8 +76,8 @@ public class PersonController : MonoBehaviour {
 	 */
 	public void Move(Vector2 dir) {
 		moveDir = dir;
-	    if (Input.GetAxis("Horizontal_p"+PlayerNumber) > 0) child.localScale = new Vector3(-1,1,1);
-        if(Input.GetAxis("Horizontal_p"+PlayerNumber) < 0) child.localScale = new Vector3(1, 1, 1);
+		if (moveDir.x > 0.05f) child.localScale = new Vector3(-1,1,1);
+		if(moveDir.x < 0.05f) child.localScale = new Vector3(1, 1, 1);
         _anim.SetFloat("Speed", 1);
     }
 
@@ -78,6 +86,18 @@ public class PersonController : MonoBehaviour {
 	 */
 	public void Jump() {
 		jump = true;
+	}
+
+	public bool IsDashing() {
+		return Time.time - startDashTime < dashTime;
+	}
+
+	public void Dash() {
+		if (!IsDashing ()) {
+			if (moveDir.magnitude > .5f) {
+				startDashTime = Time.time;
+			}
+		}
 	}
 
 	/**
@@ -123,7 +143,7 @@ public class PersonController : MonoBehaviour {
 	    _anim.SetFloat("Speed", 0);
 
 		// Update runningAvgSpeed
-		if (!jumping) {
+		if (!jumping && !IsDashing()) {
 			Vector3 lastSpeed = (transform.position - lastPosition) / Time.fixedDeltaTime;
 			runningAvgSpeed = lastSpeed * instantJumpSpeedPercent + runningAvgSpeed * (1 - instantJumpSpeedPercent);
 			if (runningAvgSpeed.magnitude > speed) {
@@ -133,11 +153,15 @@ public class PersonController : MonoBehaviour {
 		lastPosition = transform.position;
 
         // Currently just set the velocity
-		if (!jumping) {
+		if (!jumping && !IsDashing()) {
 			// Do not allow changing direction mid flight
 			rigidBody.velocity = moveDir * speed;
 		} else {
-			rigidBody.velocity = runningAvgSpeed;
+			if (jumping) {
+				rigidBody.velocity = runningAvgSpeed;
+			} else {
+				rigidBody.velocity = runningAvgSpeed.normalized * dashSpeed;
+			}
 		}
 
 		if (jump) {
