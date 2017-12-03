@@ -230,13 +230,13 @@ InputManager:
     axis: 0
     joyNum: 4
   - serializedVersion: 3
-    m_Name: Attack_p0
+    m_Name: Dash_p0
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick 1 button 2
     altNegativeButton: 
-    altPositiveButton: mouse 0
+    altPositiveButton: b
     gravity: 3
     dead: 0.001
     sensitivity: 3
@@ -278,7 +278,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Attack_p1
+    m_Name: Dash_p1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -326,7 +326,7 @@ InputManager:
     axis: 0
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Attack_p2
+    m_Name: Dash_p2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -374,7 +374,7 @@ InputManager:
     axis: 0
     joyNum: 3
   - serializedVersion: 3
-    m_Name: Attack_p3
+    m_Name: Dash_p3
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 

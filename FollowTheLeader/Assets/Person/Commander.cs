@@ -48,7 +48,7 @@ public class Commander : MonoBehaviour {
 
         if(Input.GetButtonDown("Jump_p"+PlayerNumber)) gameObject.SendMessage("Jump");
 
-        //if(Input.GetButtonDown("Attack")) gameObject.SendMessage("Attack");
+		if(Input.GetButtonDown("Dash_p"+PlayerNumber)) gameObject.SendMessage("Dash");
 	}
 
 	private void MobileInputs() {
@@ -92,9 +92,14 @@ public class Commander : MonoBehaviour {
 
 			// Jump!
 			if (t.phase == TouchPhase.Began) {
-				Vector2 pos = t.position;
-				if ((pos - size / 2).magnitude / (Screen.height*0.25f) > 1f) {
-					gameObject.SendMessage("Jump");
+				Vector2 pos = (t.position - size / 2);
+
+				if (pos.magnitude / (Screen.height*0.25f) > 1f) {
+					if (pos.y > 0) {
+						gameObject.SendMessage ("Dash");
+					}else {
+						gameObject.SendMessage ("Jump");
+					}
 				}
 			}
 		}
