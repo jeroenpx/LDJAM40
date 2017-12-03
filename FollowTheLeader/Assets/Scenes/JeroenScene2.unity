@@ -303,7 +303,7 @@ MonoBehaviour:
   SquaresTotal: 5
   connectSquare: {fileID: 745224086}
   prefabs:
-  - {fileID: 114651297943812662, guid: 3c4c1ac5e65013c4599f03a439a93659, type: 2}
+  - {fileID: 114554141636315076, guid: 9724710faf13ba149a1b5d2b5e80709b, type: 2}
   - {fileID: 114737862384130548, guid: e4b38f1f70f9a1849abc28f09125a489, type: 2}
   - {fileID: 114391984146733794, guid: b0e888e8d9419e24c924d67a9674c374, type: 2}
   - {fileID: 114651297943812662, guid: 0f431d748a3436a489b15c4285673084, type: 2}
