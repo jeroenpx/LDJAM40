@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour {
 
 	public void UpdateScore(int score) {
 		this.score = score;
-		text.text = "Tribe Size: " + score;
+		text.text = "Party Size: " + score;
 	}
 
 

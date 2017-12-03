@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114289832706668900}
   - component: {fileID: 114167953123978736}
   - component: {fileID: 114082225167469954}
+  - component: {fileID: 114983274071756080}
   m_Layer: 9
   m_Name: Follower
   m_TagString: Player
@@ -192,6 +193,7 @@ MonoBehaviour:
   keepDistance: 0
   keepDistanceCommander: 1.4
   myLengthFromCommander: 100
+  myController: {fileID: 0}
 --- !u!114 &114289832706668900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,8 +210,22 @@ MonoBehaviour:
   jumpheight: 1
   instantJumpSpeedPercent: 0.5
   _anim: {fileID: 95678460787073852}
+  _playerNumber: 0
   runningAvgSpeed: {x: 0, y: 0, z: 0}
   areFollowingMe: []
+--- !u!114 &114983274071756080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1268955909605072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0775ea4925847d48811fa98029cafe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splat: {fileID: 4883309646987234, guid: 5393c2e24b868a54da2051b6189bfb06, type: 2}
+  count: 30
 --- !u!212 &212408321017765368
 SpriteRenderer:
   m_ObjectHideFlags: 1
