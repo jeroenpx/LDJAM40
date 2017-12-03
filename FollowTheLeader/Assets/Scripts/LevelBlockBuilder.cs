@@ -5,10 +5,10 @@ using UnityEngine;
 public class LevelBlockBuilder : MonoBehaviour {
 
     private static readonly int MAX_FLOOR_WIDTH = 18;
-    private static readonly int MAX_FLOOR_HEIGT = 20;
+    private static readonly int MAX_FLOOR_HEIGT = 21;
     private static readonly int MAX_BIG_WALL_WIDTH = 18;
     private static readonly int MAX_BIG_WALL_HEIGHT = 2;
-    private static readonly int MAX_SIDE_WALL_HEIGHT = 22;
+    private static readonly int MAX_SIDE_WALL_HEIGHT = 23;
     private static readonly int MAX_SIDE_WALL_WIDTH = 1;
 
 
