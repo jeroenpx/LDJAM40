@@ -40,7 +40,7 @@ public class CameraFollow : MonoBehaviour {
 			// Everyone died
 			Time.timeScale = 0f;
 			totalDeadTime += Time.unscaledDeltaTime;
-			if (totalDeadTime > 2f) {
+			if (totalDeadTime > 1f) {
 				// Stop the freeze
 				Time.timeScale = 1f;
 				// And go to game over screen
