@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour {
 
+
     private void Update()
     {
-        if(Input.GetButtonDown("Start_p0")) SceneManager.LoadScene(0);
+        if (Input.GetButtonDown("Start_p0"))
+        {
+            Destroy(GameObject.Find("RoleLocks"));
+            SceneManager.LoadScene(0);
+        }
     }
 }
