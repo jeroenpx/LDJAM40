@@ -1255,6 +1255,7 @@ GameObject:
   - component: {fileID: 4642245584572084}
   - component: {fileID: 61666181682496914}
   - component: {fileID: 61058422312165860}
+  - component: {fileID: 61292537918899510}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -14831,6 +14832,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.45843315, y: 4.0087624}
+  m_EdgeRadius: 0
+--- !u!61 &61292537918899510
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1149744548837242}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 8.953877, y: -21.498009}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.840559, y: 1.105957}
   m_EdgeRadius: 0
 --- !u!61 &61413267887700778
 BoxCollider2D:
