@@ -250,7 +250,7 @@ MonoBehaviour:
   _selected:
   - {fileID: 1891508402906362}
   - {fileID: 1764901595921350}
-  _scrollDelay: 0.2
+  _scrollDelay: 0.15
   _screens:
   - {fileID: 1479618694406566}
   - {fileID: 1967396896882556}
