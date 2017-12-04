@@ -17,11 +17,6 @@ public class TutorialBuilder : MonoBehaviour {
     public SquareBehaviour[] fixedSequence;
     private Queue<SquareBehaviour> levels;
 
-    private void Awake()
-    {
-        connectSquare.CommanderEnteredEvent += CommanderEnteredEvent;
-    }
-
     private void Start()
     {
         levels = new Queue<SquareBehaviour>();
@@ -33,21 +28,10 @@ public class TutorialBuilder : MonoBehaviour {
             var t = fixedSequence[i];
             SquareBehaviour n = Instantiate<SquareBehaviour>(t);
             n.transform.SetParent(this.transform);
-            n.CommanderEnteredEvent += CommanderEnteredEvent;
             n.LinkToPrevious(lastSquare);
             BuildFollowers(n.transform, ((float) fixedSequence.Length)/i, i);
             levels.Enqueue(n);
             lastSquare = n;
-        }
-    }
-
-    private void CommanderEnteredEvent(SquareBehaviour e, Commander c)
-    {
-        if (e.getSerialNr() > this.fixedSequence.Length)
-        {
-            //game over, finish reached, congrats!
-            Debug.Break();
-            //Invoke("RestartGame", 10);
         }
     }
 

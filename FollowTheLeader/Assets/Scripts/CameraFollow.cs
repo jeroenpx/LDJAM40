@@ -40,7 +40,10 @@ public class CameraFollow : MonoBehaviour {
 			// Everyone died
 			Time.timeScale = 0f;
 			totalDeadTime += Time.unscaledDeltaTime;
-			if (totalDeadTime > 0.5f) {
+			if (totalDeadTime > 2f) {
+				// Stop the freeze
+				Time.timeScale = 1f;
+				// And go to game over screen
 				SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings-1);
 			}
 		}
