@@ -70,7 +70,6 @@ public class IndividualCharacterSelect : MonoBehaviour
             _Selection.gameObject.SetActive(true);
             _joined = true;
         }
-
     }
 
     private void Select()
