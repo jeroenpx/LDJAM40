@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="42" height="45" tilewidth="32" tileheight="32" nextobjectid="5">
+ <tileset firstgid="1" source="TileSet/tileconfig_level.tsx"/>
+ <layer name="Manual" width="42" height="45">
+  <data encoding="base64" compression="zlib">
+   eJztlDEWgDAIQ/scvJH3v5pT3+tQbRCitGbI0lb4SGAvpeyStLC2IHnz/IkT+Y7xP5BYVs+I05a3d8fwp7eWv3CO+LNzRsyJOPNyInNTz45GqG/FaYv7BicaNyJ/JOeohmimno9W5UR7M5otdt9X44yawbu34uRyenPdeQwVwp6B86rPs3J6/dSq7itvL8UZz/m1xDkHJ+oxJieSmzVzs3NaepqB80k8lqycjBoi94I4Obs3m06rWiMV
+  </data>
+ </layer>
+ <layer name="Auto" width="42" height="45" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzlWE1Lw0AQjQqF4kkNgjYIksWDt9L//99MoAvj9M3sy+xuEDy8SzrdeZmvl9nDMAyHf4CnBc+N8FLpx/v/24K7RjhV+vH+/7ngsRHmSj+zE+PzgvtGuDg8GT8XJ8Z/jaeVI5bn94IHgfcOPBHGa/6l71fg93iF7oMT8N2D5zTc1sKH41f3wbyRp44BizTc1sKX4xdx2sJTx8Cqz8j7tOSpY2D5Y96nJ8+jgbP6P/M+PXki3VxnOJoj6Fxtp5HPq+WJdPMEnltzhNXdWp5IN2fw3JojrO7W8kR9jM4YgS2ys+q0x1wawRkTsN2TJ+rjCZyRgO2ePNG5CeQYAcV9C6canvnbgZnrKO578mR1KpH+2R7M32Bonls8kS7JeHu/R3sQfYPl+Wvx9PSu9Hu0B9E3WJ6/qDfWOGc91fmSuWH1EIG1yz5Rb0jd1PmSuWH1sJbnBJ6l4bdu6nzJ3LB6WMszOXFm5yeqC+/7qQS033lxZuenVxfROxEUZ/QM9aeVD68uonciiBO797C1UAurbtm9h62FXjzZvYethV48rT3OQmkfyj3LnsfOtdJOp+/n2H2Ivb9ld4TSTqfv59h9iL2/ZXeE0k4XuZ9j9zvrrgf5kPnx5s5I2Ejb6AyzeMr8eHNnImykbXSGWVos8+PNnUTYSNvoDLO0uOW9dQtYWmzVUQ+dXM/cOq8zrDrqoZPrmdY+WYJVRz10MlXwjOYhiijPH1OuTeY=
+  </data>
+ </layer>
+ <layer name="AutoTraps" width="42" height="45" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzt1TEKgDAQBMA8SK3Eyvj/Z3lXK2ghXIQZ2H45wqY1AAAY1xSZI0t1kQd7pEeO6iL8mvd+5SYA38ttHX1X0xrZqku8kH+A/QcA7pwbAQT5
+  </data>
+ </layer>
+ <objectgroup name="PointsOfInterest">
+  <object id="1" name="Enter" x="-16" y="752" width="32" height="32">
+   <ellipse/>
+  </object>
+  <object id="2" name="Exit" x="1328" y="1008" width="32" height="32">
+   <ellipse/>
+  </object>
+  <object id="4" name="SawBlade1" type="SawBlade" x="352" y="384">
+   <polyline points="0,0 384,0"/>
+  </object>
+ </objectgroup>
+</map>

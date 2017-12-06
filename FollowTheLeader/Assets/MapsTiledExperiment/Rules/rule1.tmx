@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" source="../TileSet/tileconfig_level.tsx"/>
+ <layer name="regions" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAe8OKgRwH1AAA2lAAo
+  </data>
+ </layer>
+ <layer name="input_Manual" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAemEJpJijNRoLeUUAcAABV9AA+
+  </data>
+ </layer>
+ <layer name="output_Auto" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAemEJpJijNRoLeUUAcAABV9AA+
+  </data>
+ </layer>
+</map>

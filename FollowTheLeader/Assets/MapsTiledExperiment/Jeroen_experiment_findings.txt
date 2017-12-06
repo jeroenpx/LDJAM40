@@ -1,0 +1,31 @@
+## LEARNINGS
+
+1. Rules can only have one layer as input.
+
+WHY??? Don't know... Did not get it to work with multiple... (e.g. check if there is a wall in the Walls layer and a Ground tile one below in the Manual layer)
+
+2. Best to work in two layers:
+ - Manual
+ - Auto
+
+WHY??? Once all the conversions are done, information CAN be copied to other layers as well (split), but the auto-conversion does not seem to work well if you need to match information from multiple layers.
+? Only works with input for one layer??? => did not get the other thing working???
+
+3. First rule should be to copy all tiles from Manual to Auto layer
+
+WHY??? Same reason as above, can only match one layer (+ we want to keep the Manual layer as is)
+
+4. In the Auto layer, all tiles should be filled!!! ALWAYS!
+
+WHY??? The rules cannot match "nothingness". If you don't put in something while building a rule, it will never match anything (not even nothingness).
+=> If you want to make some fade to the "void", you need to be able to detect where there is nothing...
+   => so a tile needs to be there!
+
+5. inputnot... layers are OR-ed!!! DO NOT USE MULTIPLE NOT LAYERS!
+
+WHY??? From the moment you use multiple, you start matching everything and the rule just starts applying to the whole scene!!! (except for the tiles that are empty... As mentioned before, you cannot match those :( )
+
+
+TODO:
+ - Did not try using tiles from multiple tile-sets...
+ - Try and import this into Unity

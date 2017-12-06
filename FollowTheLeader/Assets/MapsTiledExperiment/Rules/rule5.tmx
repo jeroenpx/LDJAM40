@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" source="../TileSet/tileconfig_level.tsx"/>
+ <layer name="regions" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAe8EIxLj4t1REjNhwAANL8ALc=
+  </data>
+ </layer>
+ <layer name="input_Auto" width="10" height="10" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAesAExMxKfGSqGTR0jEp8RjzpuJD43DnWGWMSM8bp06AIApigApw==
+  </data>
+ </layer>
+ <layer name="input_Auto" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAeGAMxMxIfxDbEoo4NiBmR+IxQMWzquJH43DjUYbPDGK9Lhy4AAB07AP8=
+  </data>
+ </layer>
+ <layer name="input_Auto" width="10" height="10" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYCANiCGxRfCok0Niy+BRp4bEViHCTmLsHsoAAPHYANk=
+  </data>
+ </layer>
+ <layer name="output_Auto" width="10" height="10" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAeaGERk8IiJolFTBqLmCIWMWUS3DMcAQDiwAC9
+  </data>
+ </layer>
+</map>
