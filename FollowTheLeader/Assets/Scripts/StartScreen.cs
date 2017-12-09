@@ -82,10 +82,13 @@ public class StartScreen : MonoBehaviour {
         {
 
             foreach (var gameMode in _selected) gameMode.SetActive(false);
-            Debug.Log(_currentSelected);
-            if (Input.GetAxis("Horizontal_p0") < -0.5)
+
+            //Debug.Log(_currentSelected);
+
+            if (Input.GetAxis("Horizontal_p0") < 0)
             {
                 _scrollCounter += Time.deltaTime;
+
                 if (_scrollCounter >= _scrollDelay)
                 {
                     ++_currentSelected;
@@ -94,10 +97,10 @@ public class StartScreen : MonoBehaviour {
                 }
             }
 
-            if (Input.GetAxis("Horizontal_p0") > 0.5)
+            if (Input.GetAxis("Horizontal_p0") > 0)
             {
-
                 _scrollCounter += Time.deltaTime;
+
                 if (_scrollCounter >= _scrollDelay)
                 {
                     --_currentSelected;
@@ -105,11 +108,10 @@ public class StartScreen : MonoBehaviour {
                     _scrollCounter = 0;
                 }
             }
-
         }
         else
         {
-            _scrollCounter = _scrollDelay;
+            _scrollCounter = 0;
         }
         _selected[_currentSelected].SetActive(true);
     
