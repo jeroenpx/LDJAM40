@@ -1,0 +1,48 @@
+#
+# Jeroen's rules for making levels with Tiled and our own tileset.
+#
+
+# WARNING: we don't have tiles for corners like this:
+# 
+# xX  <- need to fill this gap
+# xXX
+# xxx
+#      => responsability of the level designer!
+# Also, sometimes we cannot put a wall, because not enough space... => also level designer has to take into account!
+
+
+
+
+# Copy the lava, ground AND VOID(!) tiles to the "Auto" layer
+Rules/rule1.tmx
+
+
+# Then, if there is a lava or ground tile to the left or right of the void, put a left or right wall there
+Rules/rule2.tmx
+
+
+# Then, if there is a lava or ground below 3 tiles of void, put a back wall there
+# Also, if there were already left or right walls there, convert it into a corner wall 
+# Note, also do this last part (corner walls) if there is a void tile below it. (inner left-bottom & inner right-bottom corners)
+Rules/rule3.tmx
+
+
+# Corners at the top (outer left-top & outer right-top corners)
+Rules/rule5.tmx
+
+
+# If there is a lava or ground tile above 1 tile of void OR bottom of void wall, put a bottom wall there (so the wall going to the void at the bottom of the screen)
+# However, if there were already left or right walls there don't do anything
+Rules/rule4.tmx
+
+
+# Lava corners...
+Rules/rule6.tmx
+
+
+# Transition to the void of the top of a wall...
+Rules/rule7.tmx
+
+
+# Move traps to different layer
+Rules/rule8.tmx
